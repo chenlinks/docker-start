@@ -10,7 +10,7 @@ gpgkey=https://yum.dockerproject.org/gpg
 EOF
 echo "------------"
 echo "update yum"
-yum update
+yum update -y
 echo "------------"
 echo "install docker-engine"
 yum install -y docker-engine
