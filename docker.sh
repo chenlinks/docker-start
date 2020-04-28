@@ -29,6 +29,20 @@ echo "enable docker"
 systemctl enable docker.service
 sed '12c ExecStart=/usr/bin/dockerd --graph=/data/docker' /lib/systemd/system/docker.service
 echo "------------"
-echo "start docker"
+echo "config daemon.json"
+mkdir -p /etc/docker
+tee /etc/docker/daemon.json <<-'EOF'
+{
+    "registry-mirrors": [
+        "https://docker.mirrors.ustc.edu.cn",
+        "http://f1361db2.m.daocloud.io",
+        "https://registry.docker-cn.com",
+        "https://hub-mirror.c.163.com",
+        "https://mirror.ccs.tencentyun.com"
+    ]
+}
+EOF
+echo "------------"
+echo "reStart docker"
 systemctl daemon-reload
 systemctl start docker
