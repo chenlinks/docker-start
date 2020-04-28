@@ -49,4 +49,5 @@ EOF
 
 echo "reStart docker"
 systemctl daemon-reload
+systemctl restart docker
 
