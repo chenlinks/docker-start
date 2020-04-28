@@ -32,6 +32,7 @@ chmod +x /usr/local/bin/docker-compose
 
 
 systemctl enable docker.service
+systemctl start docker
 
 mkdir -p /etc/docker/
 tee /etc/docker/daemon.json <<-'EOF'
@@ -48,4 +49,4 @@ EOF
 
 echo "reStart docker"
 systemctl daemon-reload
-systemctl start docker
+
