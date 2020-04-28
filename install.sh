@@ -27,7 +27,7 @@ yum install -y docker-engine
 
 
 echo "install docker-compose"
-curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f2d495ac.m.daocloud.io
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 
