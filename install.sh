@@ -7,7 +7,8 @@ yum remove docker \
                   docker-latest \
                   docker-latest-logrotate \
                   docker-logrotate \
-                  docker-engine
+                  docker-engine \
+                  docker-selinux
 
 
 tee /etc/yum.repos.d/docker.repo <<-'EOF'
@@ -18,8 +19,6 @@ enabled=1
 gpgcheck=1
 gpgkey=https://yum.dockerproject.org/gpg
 EOF
-
-
 
 
 yum install -y docker-engine
